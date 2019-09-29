@@ -1,0 +1,2 @@
+include ':app', ':funlib'
+rootProject.name='FunBox'
