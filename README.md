@@ -2,6 +2,9 @@
 
 学习Android的一些记录
 
+## 如何使用
+
+
 ## TopFuncUtil.kt 扩展了一些函数
 
 | 函数名  | 说明 |
@@ -52,3 +55,7 @@ android{
     [file_paths](https://github.com/wlDayDayUp/FunBox/blob/master/app/src/main/res/xml/file_paths.xml)
     
 ### [MyApp](https://github.com/wlDayDayUp/FunBox/blob/master/app/src/main/java/com/wl1217/funbox/MyApp.java)
+
+初始化
+
+### [混淆](https://github.com/wlDayDayUp/FunBox/blob/master/app/proguard-rules.pro)
