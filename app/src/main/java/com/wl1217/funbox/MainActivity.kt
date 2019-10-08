@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         "你好！".log()
 
         getCs.setOnClickListener {
+            RxHttp.get("")
             RxHttp.get(Api.getCs)
                 .add("username", "weee")
                 .add("age", "123")

@@ -3,4 +3,4 @@
 #RxLife
 -keep class com.rxjava.rxlife.**{*;}
 
--keep class com.wl1217.funlib.utils.**{*;}
+-keep class com.wl1217.funlib.**{*;}
