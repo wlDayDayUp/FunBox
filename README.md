@@ -9,3 +9,6 @@
 | String.toast | 显示吐司 |
 | Any.log | DEBUG下打印日志 |
 | Date.format | 日期格式化 |
+| String.md5 | MD5加密 |
+| String.sha1| sha1加密 |
+| String.sha256| sha256加密 |

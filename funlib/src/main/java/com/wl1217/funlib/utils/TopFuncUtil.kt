@@ -26,4 +26,20 @@ fun Any.log(tag: String = "wl") {
 /**
  *  格式化日期
  */
-fun Date.format(pattern: String="yyyy-MM-dd HH:mm:ss"): String =  SimpleDateFormat(pattern, Locale.CHINA).format(this)
+fun Date.format(pattern: String = "yyyy-MM-dd HH:mm:ss"): String =
+    SimpleDateFormat(pattern, Locale.CHINA).format(this)
+
+/**
+ *  MD5 加密
+ */
+fun String.md5() = MessageDigestUtil.md5(this)
+
+/**
+ *  sha1 加密
+ */
+fun String.sha1() = MessageDigestUtil.sha1(this)
+
+/**
+ *  sha256 加密
+ */
+fun String.sha256() = MessageDigestUtil.sha256(this)
