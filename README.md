@@ -31,11 +31,24 @@ android{
 
 内部使用了三方库 [Rxhttp](https://github.com/liujingxing/RxHttp) 做网络请求,API兼容问题
 
-### AndroidMainfest.xml
+### 3. AndroidMainfest.xml
 
 1. 添加权限
 2. application节点下
     - android:networkSecurityConfig="@xml/network_config"
     - android:name=".MyApp"
+3. 兼容 Android 7.0 
+    ```xml
+      <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="包名.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    ```
+    [file_paths](https://github.com/wlDayDayUp/FunBox/blob/master/app/src/main/res/xml/file_paths.xml)
     
-### MyApp
+### [MyApp](https://github.com/wlDayDayUp/FunBox/blob/master/app/src/main/java/com/wl1217/funbox/MyApp.java)
