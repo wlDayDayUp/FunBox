@@ -30,3 +30,12 @@ android{
 ### 2. API兼容问题
 
 内部使用了三方库 [Rxhttp](https://github.com/liujingxing/RxHttp) 做网络请求,API兼容问题
+
+### AndroidMainfest.xml
+
+1. 添加权限
+2. application节点下
+    - android:networkSecurityConfig="@xml/network_config"
+    - android:name=".MyApp"
+    
+### MyApp

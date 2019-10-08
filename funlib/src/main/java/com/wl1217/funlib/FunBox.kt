@@ -12,4 +12,5 @@ class FunBox {
             return if (baseUrl == null || "".equals(baseUrl)) throw Exception("请初始化BaseUrl") else baseUrl!!
         }
     }
+
 }
