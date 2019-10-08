@@ -1,4 +1,4 @@
-package com.wl1217.funlib.api
+package com.wl1217.funbox
 
 import rxhttp.wrapper.annotation.DefaultDomain
 
