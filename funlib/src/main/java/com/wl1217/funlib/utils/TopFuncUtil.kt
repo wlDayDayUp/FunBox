@@ -27,5 +27,3 @@ fun Any.log(tag: String = "wl") {
  *  格式化日期
  */
 fun Date.format(pattern: String="yyyy-MM-dd HH:mm:ss"): String =  SimpleDateFormat(pattern, Locale.CHINA).format(this)
-
-
