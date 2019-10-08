@@ -59,3 +59,11 @@ android{
 初始化
 
 ### [混淆](https://github.com/wlDayDayUp/FunBox/blob/master/app/proguard-rules.pro)
+
+### app build.gradle
+
+1. apply plugin: 'kotlin-kapt'
+2.   //注解处理器，生成RxHttp类
+    annotationProcessor 'com.rxjava.rxhttp:rxhttp-compiler:1.2.1'
+    kapt 'com.rxjava.rxhttp:rxhttp-compiler:1.2.1'
+3. 添加Url类并设BaseUrl，之后rebuild项目
