@@ -13,6 +13,18 @@ object MessageDigestUtil {
         return toHex(result)
     }
 
+    fun sha1(str: String): String {
+        val digest = MessageDigest.getInstance("SHA-1")
+        val result = digest.digest(str.toByteArray())
+        return toHex(result)
+    }
+
+    fun sha256(str: String): String {
+        val digest = MessageDigest.getInstance("SHA-256")
+        val result = digest.digest(str.toByteArray())
+        return toHex(result)
+    }
+
     private fun toHex(byteArray: ByteArray): String {
         return with(StringBuilder()) {
             byteArray.forEach {
@@ -26,17 +38,5 @@ object MessageDigestUtil {
             }
             toString()
         }
-    }
-
-    fun sha1(str: String): String {
-        val digest = MessageDigest.getInstance("SHA-1")
-        val result = digest.digest(str.toByteArray())
-        return toHex(result)
-    }
-
-    fun sha256(str: String): String {
-        val digest = MessageDigest.getInstance("SHA-256")
-        val result = digest.digest(str.toByteArray())
-        return toHex(result)
     }
 }

@@ -7,6 +7,10 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
     defaultConfig {
         applicationId "com.wl1217.funbox"
         minSdkVersion 18

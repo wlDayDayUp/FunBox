@@ -1,9 +1,13 @@
 package com.wl1217.funbox
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.rxjava.rxlife.RxLife
+import com.wl1217.funlib.api.Url
 import com.wl1217.funlib.utils.log
 import com.wl1217.funlib.utils.toast
+import kotlinx.android.synthetic.main.activity_main.*
+import rxhttp.wrapper.param.RxHttp
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +18,17 @@ class MainActivity : AppCompatActivity() {
         "Welcome on Android".toast(this)
 
         "你好！".log()
+
+        getCs.setOnClickListener {
+            RxHttp.get(Url.getCs)
+                .add("username", "weee")
+                .add("age", "123")
+                .asObject(GetTestBean::class.java)
+                .`as`(RxLife.asOnMain(this))
+                .subscribe({
+                    it.toString().log()
+                }, { it.printStackTrace() })
+        }
 
     }
 }
