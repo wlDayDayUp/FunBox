@@ -21,9 +21,11 @@
 ### 1. App 的 build.gradle添加 
 
 ```groovy
+// 添加kotlin注解插件
 apply plugin: 'kotlin-kapt'
 
 android{
+    // 配置JDK1.8
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -31,6 +33,7 @@ android{
 }
 
 dependencies{
+    // 依赖我们的库
     implementation project(path: ':funlib')
     //注解处理器，生成RxHttp类
     annotationProcessor 'com.rxjava.rxhttp:rxhttp-compiler:1.2.1'
@@ -45,15 +48,15 @@ allprojects{
 }
 ```
 
-### 3. Application 初始化网络请求 [MyApp]()
+### 3. Application 初始化网络请求 [MyApp](https://github.com/wlDayDayUp/FunBox/blob/master/app/src/main/java/com/wl1217/funbox/MyApp.java)
 
-### 4. [混淆文件]()
+### 4. [混淆文件](https://github.com/wlDayDayUp/FunBox/blob/master/app/proguard-rules.pro)
 
-### 5. 创建Url类，用于rebuild，RxHttp类，[Url]() 
+### 5. 创建Url类，用于rebuild，RxHttp类，[Url](https://github.com/wlDayDayUp/FunBox/blob/master/app/src/main/java/com/wl1217/funbox/Url.kt) 
 
 ### 6. AndroidMainfest.xml
 
-[file_paths](https://github.com/wlDayDayUp/FunBox/blob/master/app/src/main/res/xml/file_paths.xml)
+res/xml下：[file_paths](https://github.com/wlDayDayUp/FunBox/tree/master/app/src/main/res/xml)
   
 1. 添加相应权限
 
@@ -76,5 +79,5 @@ allprojects{
 
 ### 内部使用了三方库
  
-- [Rxhttp](https://github.com/liujingxing/RxHttp) 做网络请求,API兼容问题
+- [Rxhttp](https://github.com/liujingxing/RxHttp)
 
