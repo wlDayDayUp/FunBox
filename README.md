@@ -18,25 +18,45 @@
 
 ## 使用注意事项
 
-### 1. 添加Java 8 支持
+### 1. App 的 build.gradle添加 
 
-app 的 build.gradle添加
 ```groovy
+apply plugin: 'kotlin-kapt'
+
 android{
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
+dependencies{
+    implementation project(path: ':funlib')
+    //注解处理器，生成RxHttp类
+    annotationProcessor 'com.rxjava.rxhttp:rxhttp-compiler:1.2.1'
+    kapt 'com.rxjava.rxhttp:rxhttp-compiler:1.2.1'
+}
 ```
 
-### 2. API兼容问题
+### 2. Project build.gradle添加
+```groovy
+allprojects{
+    maven { url 'https://jitpack.io' }
+}
+```
 
-内部使用了三方库 [Rxhttp](https://github.com/liujingxing/RxHttp) 做网络请求,API兼容问题
+### 3. Application 初始化网络请求 [MyApp]()
 
-### 3. AndroidMainfest.xml
+### 4. [混淆文件]()
 
-1. 添加权限
+### 5. 创建Url类，用于rebuild，RxHttp类，[Url]() 
+
+### 6. AndroidMainfest.xml
+
+[file_paths](https://github.com/wlDayDayUp/FunBox/blob/master/app/src/main/res/xml/file_paths.xml)
+  
+1. 添加相应权限
+
 2. application节点下
     - android:networkSecurityConfig="@xml/network_config"
     - android:name=".MyApp"
@@ -52,18 +72,9 @@ android{
                 android:resource="@xml/file_paths" />
         </provider>
     ```
-    [file_paths](https://github.com/wlDayDayUp/FunBox/blob/master/app/src/main/res/xml/file_paths.xml)
     
-### [MyApp](https://github.com/wlDayDayUp/FunBox/blob/master/app/src/main/java/com/wl1217/funbox/MyApp.java)
 
-初始化
+### 内部使用了三方库
+ 
+- [Rxhttp](https://github.com/liujingxing/RxHttp) 做网络请求,API兼容问题
 
-### [混淆](https://github.com/wlDayDayUp/FunBox/blob/master/app/proguard-rules.pro)
-
-### app build.gradle
-
-1. apply plugin: 'kotlin-kapt'
-2.   //注解处理器，生成RxHttp类
-    annotationProcessor 'com.rxjava.rxhttp:rxhttp-compiler:1.2.1'
-    kapt 'com.rxjava.rxhttp:rxhttp-compiler:1.2.1'
-3. 添加Url类并设BaseUrl，之后rebuild项目

@@ -2,8 +2,6 @@ package com.wl1217.funbox;
 
 import android.app.Application;
 
-import com.wl1217.funlib.FunBox;
-
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.plugins.RxJavaPlugins;
@@ -23,15 +21,12 @@ public class MyApp extends Application {
         super.onCreate();
         instance = this;
         initRxHttp();   /* 初始化网络请求 */
-//        Utils.init(this);/*初始化工具类*/
     }
 
     /**
      * 初始化网络请求
      */
     private void initRxHttp() {
-
-        FunBox.INSTANCE.init("http://192.168.0.166:3000");
 
         //设置RxJava 全局异常处理
         RxJavaPlugins.setErrorHandler(throwable -> {
