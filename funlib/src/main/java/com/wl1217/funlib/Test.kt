@@ -12,7 +12,5 @@ fun main() {
     println("SHA1: ${"123456".sha1()}")
     println("SHA256: ${"123456".sha256()}")
 
-    FunBox.init("")
 
-    println(FunBox.getBaseUrl())
 }

@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.provider.MediaStore
 import androidx.appcompat.app.AppCompatActivity
 import com.rxjava.rxlife.RxLife
+import com.wl1217.funbox.bean.TestSignBean
+import com.wl1217.funlib.utils.DESCyptoUtil
 import com.wl1217.funlib.utils.log
 import com.wl1217.funlib.utils.toast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,24 +20,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        "Welcome on Android".toast(this)
-
-        "你好！".log()
-
         getCs.setOnClickListener {
-            
-            RxHttp.get(Api.getCs)
-                .add("username", "weee")
-                .add("age", "123")
-                .asObject(GetTestBean::class.java)
+            RxHttp.postForm(Url.testSign)
+                .add(
+                    Url.doTestSign(
+                        "",
+                        DESCyptoUtil.encode("Yk_DES@^", "q123456789"),
+                        "0",
+                        ""
+                    )
+                )
+                .asObject(TestSignBean::class.java)
                 .`as`(RxLife.asOnMain(this))
                 .subscribe({
-                    it.toString().log()
+                    result_tv.text = it.toString()
                 }, {
                     it.printStackTrace()
-                    it.message?.log()
                 })
         }
+
 
     }
 }

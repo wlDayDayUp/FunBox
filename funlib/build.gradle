@@ -43,4 +43,6 @@ dependencies {
     api 'com.squareup.okhttp3:okhttp:3.12.3'
     //页面销毁，关闭请求，非必须
     api 'com.rxjava.rxlife:rxlife:1.1.0'
+    // Android 工具
+    api 'com.blankj:utilcodex:1.25.9'
 }

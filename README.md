@@ -5,7 +5,7 @@
 ## 如何使用
 
 
-## TopFuncUtil.kt 扩展了一些函数
+### TopFuncUtil.kt 扩展了一些函数
 
 | 函数名  | 说明 |
 |:-:| :-: |
@@ -15,6 +15,12 @@
 | String.md5 | MD5加密 |
 | String.sha1| sha1加密 |
 | String.sha256| sha256加密 |
+
+### MessageDigestUtil.kt（MD5、SHA-1、SHA-256加密工具类）
+
+### RequestConvertUtil.kt 获取网络请求签名的参数工具，使用[Url.kt](https://github.com/wlDayDayUp/FunBox/blob/master/app/src/main/java/com/wl1217/funbox/Url.kt)
+
+### Funlib.kt 初始化，记得在Application里面init
 
 ## 使用注意事项
 
@@ -81,3 +87,4 @@ res/xml下：[file_paths](https://github.com/wlDayDayUp/FunBox/tree/master/app/s
  
 - [Rxhttp](https://github.com/liujingxing/RxHttp)
 
+- [AndroidUtilCode](https://github.com/Blankj/AndroidUtilCode)
